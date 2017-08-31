@@ -35,6 +35,13 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: 'A Python interface to the pkg-config command line tool'
+  
+  description: |
+    pkgconfig is a Python module to interface with the pkg-config command 
+    line tool and supports Python 2.6+.
+  doc_url: https://people.freedesktop.org/~dbn/pkg-config-guide.html
+  dev_url: hhttps://github.com/matze/pkgconfig
+  doc_source_url: 
 
 extra:
   recipe-maintainers:
