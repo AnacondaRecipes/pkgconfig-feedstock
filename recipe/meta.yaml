@@ -19,6 +19,7 @@ requirements:
     - nose >=1.0
   run:
     - python
+    - poetry
     - pkg-config        # [unix]
     - m2w64-pkg-config  # [win]
 
