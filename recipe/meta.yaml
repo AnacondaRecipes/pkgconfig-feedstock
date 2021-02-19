@@ -1,4 +1,4 @@
-{% set version = "1.4.0" %}
+{% set version = "1.5.2" %}
 
 package:
   name: pkgconfig
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pkgconfig/pkgconfig-{{ version }}.tar.gz
-  sha256: 048c3b457da7b6f686b647ab10bf09e2250e4c50acfe6f215398a8b5e6fcdb52
+  sha256: 38d612488f0633755a2e7a8acab6c01d20d63dbc31af75e2a9ac98a6f638ca94
 
 build:
   number: 0
