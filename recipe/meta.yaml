@@ -17,6 +17,7 @@ requirements:
     - python
     - pip
     - nose >=1.0
+    - poetry
   run:
     - python
     - pkg-config        # [unix]
