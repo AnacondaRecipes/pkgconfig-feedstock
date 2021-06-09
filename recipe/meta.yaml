@@ -13,19 +13,29 @@ build:
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
+  build:
+    - python                     # [build_platform != target_platform]
+    - pkg-config  # [unix]
   host:
-    - python
+    - python >=3.3
     - pip
     - nose >=1.0
     - poetry
+    - setuptools
+    - wheel
   run:
-    - python
+    - python >=3.3
     - pkg-config        # [unix]
     - m2w64-pkg-config  # [win]
 
 test:
   imports:
     - pkgconfig
+    - pkgconfig.pkgconfig
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/matze/pkgconfig
@@ -33,6 +43,9 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: 'A Python interface to the pkg-config command line tool'
+  dev_url: https://github.com/matze/pkgconfig
+  doc_url: https://github.com/matze/pkgconfig/blob/master/README.rst
+
 
 extra:
   recipe-maintainers:
