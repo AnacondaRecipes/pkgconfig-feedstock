@@ -13,9 +13,6 @@ build:
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
-    - python                     # [build_platform != target_platform]
-    - pkg-config  # [unix]
   host:
     - python >=3.3
     - pip
