@@ -10,6 +10,8 @@ source:
 
 build:
   number: 0
+  # skip s390x due to missing the package poetry for the s390x architecture
+  skip: True  # [py<36 or s390x]
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
@@ -22,7 +24,7 @@ requirements:
     - setuptools
     - wheel
   run:
-    - python
+    - python >=3.6
     - pkg-config        # [unix]
     - m2w64-pkg-config  # [win]
 
@@ -31,6 +33,7 @@ test:
     - pkgconfig
     - pkgconfig.pkgconfig
   requires:
+    - python <3.10
     - pip
   commands:
     - pip check
