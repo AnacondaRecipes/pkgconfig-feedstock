@@ -11,14 +11,14 @@ source:
 build:
   number: 0
   # skip s390x due to missing the package poetry for the s390x architecture
-  skip: True  # [s390x]
+  # skip: True  # [s390x]
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   host:
     - python
     - pip
-    - poetry_core >=1.0.0
+    - poetry-core >=1.0.0
     - setuptools
     - wheel
   run:
