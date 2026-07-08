@@ -38,6 +38,10 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: A Python interface to the pkg-config command line tool
+  description: |
+    pkgconfig is a Python module to interface with the pkg-config command-line tool.
+    It allows checking for package existence, version compatibility, compiler and linker
+    flags, and package-defined variables.
   dev_url: https://github.com/matze/pkgconfig
   doc_url: https://github.com/matze/pkgconfig/blob/master/README.rst
 
