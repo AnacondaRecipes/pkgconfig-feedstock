@@ -14,15 +14,14 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation
 
 requirements:
-  build:
-    - pkg-config  # [unix]
-    - ucrt64-pkg-config  # [win]
   host:
     - python
     - pip
     - poetry-core >=1.0.0
   run:
     - python
+    - pkg-config        # [unix]
+    - m2w64-pkg-config  # [win]
 
 test:
   imports:
