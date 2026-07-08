@@ -10,13 +10,14 @@ source:
 
 build:
   number: 0
+  skip: True  # [py<39]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation
 
 requirements:
   host:
     - python
     - pip
-    - poetry-core
+    - poetry-core >=1.0.0
   run:
     - python
     - pkg-config  # [unix]
