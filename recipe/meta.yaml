@@ -21,8 +21,8 @@ requirements:
   run:
     - python
     - pkg-config        # [unix]
-- pkg-config        # [unix]
-- ucrt64-pkg-config  # [win] 
+    - pkg-config        # [unix]
+    - ucrt64-pkg-config  # [win] 
 
 test:
   imports:
