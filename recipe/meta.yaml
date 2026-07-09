@@ -21,7 +21,8 @@ requirements:
   run:
     - python
     - pkg-config        # [unix]
-    - m2w64-pkg-config  # [win]
+- pkg-config        # [unix]
+- ucrt64-pkg-config  # [win] 
 
 test:
   imports:
@@ -46,6 +47,9 @@ about:
   doc_url: https://github.com/matze/pkgconfig/blob/master/README.rst
 
 extra:
+	skip-lints:
+	  - build_tools_must_be_in_build
+	  - msys2_must_be_in_build
   recipe-maintainers:
     - jakirkham
     - lbdreyer
