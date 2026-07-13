@@ -1,28 +1,27 @@
-{% set version = "1.5.5" %}
+{% set version = "1.6.0" %}
 
 package:
   name: pkgconfig
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/pkgconfig/pkgconfig-{{ version }}.tar.gz
-  sha256: deb4163ef11f75b520d822d9505c1f462761b4309b1bb713d08689759ea8b899
+  url: https://pypi.org/packages/source/p/pkgconfig/pkgconfig-{{ version }}.tar.gz
+  sha256: 4a5a6631ce937fafac457104a40d558785a658bbdca5c49b6295bc3fd651907f
 
 build:
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  skip: True  # [py<39]
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
     - python
     - pip
     - poetry-core >=1.0.0
-    - setuptools
-    - wheel
   run:
     - python
     - pkg-config        # [unix]
-    - m2w64-pkg-config  # [win]
+    - ucrt64-pkg-config  # [win] 
 
 test:
   imports:
@@ -38,12 +37,18 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'A Python interface to the pkg-config command line tool'
+  summary: A Python interface to the pkg-config command line tool
+  description: |
+    pkgconfig is a Python module to interface with the pkg-config command-line tool.
+    It allows checking for package existence, version compatibility, compiler and linker
+    flags, and package-defined variables.
   dev_url: https://github.com/matze/pkgconfig
   doc_url: https://github.com/matze/pkgconfig/blob/master/README.rst
 
-
 extra:
+  skip-lints:
+    - build_tools_must_be_in_build
+    - msys2_must_be_in_build
   recipe-maintainers:
     - jakirkham
     - lbdreyer
