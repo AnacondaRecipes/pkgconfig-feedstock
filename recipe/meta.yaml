@@ -11,7 +11,7 @@ source:
 build:
   number: 0
   skip: True  # [py<39]
-  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
@@ -20,7 +20,6 @@ requirements:
     - poetry-core >=1.0.0
   run:
     - python
-    - pkg-config        # [unix]
     - pkg-config        # [unix]
     - ucrt64-pkg-config  # [win] 
 
