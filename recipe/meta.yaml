@@ -9,7 +9,7 @@ source:
   sha256: 4a5a6631ce937fafac457104a40d558785a658bbdca5c49b6295bc3fd651907f
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py<39]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
@@ -20,8 +20,8 @@ requirements:
     - poetry-core >=1.0.0
   run:
     - python
-    - pkg-config        # [unix]
-    - ucrt64-pkg-config  # [win] 
+    - pkg-config         # [unix or (win and arm64)]
+    - ucrt64-pkg-config  # [win and not arm64]
 
 test:
   imports:
